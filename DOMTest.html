@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fi-FI">
+    <head>
+        <title>TITLE</title>
+        <meta charset="utf-8"/>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>DOM Test</h1>
+
+        <h3 id="otsikko">Event Handler</h3>
+        <p id="teksti">Text</p>
+        <button id="nappi">press me!</button>
+        <br/>
+        <button id="plus">+</button>
+        <button id="minus">-</button>
+
+        <p id="testi">Wellcome to the coding world!
+            <br>This is a test text<br></p>
+
+
+        <script>
+            
+            // Let's create a connection (yhteys)
+            const teksti = document.getElementById("teksti");
+            const otsikko = document.getElementById("otsikko");
+
+            // Edit html elements in javascript
+            teksti.innerText = "New text";
+            teksti.style.backgroundColor = "lightblue";
+
+            //"event handler"
+            // button element, button press, mouse button
+
+            // create a button element on the html side
+            // create a connection to the element between javascript and html
+            const nappi = document.getElementById("nappi");
+
+
+            // An eventhandler is added to the button, This button works when clicked
+            // After this we go to the kirjoita function
+            nappi.addEventListener("click",kirjoita);
+            
+            function kirjoita() {
+                console.log("kirjoita");
+                teksti.innerText = "Hei Hei";                
+            }
+            
+            //check how does it change in the console?
+            let testitesti= function() { console.log ("testi");
+            testitesti()
+            }
+            
+
+            // Assignment
+            // On the HTML side, Create two button elements (named plus and minus).
+            // On the javascript side, make connection between html and javascript (constants names are plus and minus)
+        
+            const plus = document.getElementById("plus");
+            const minus = document.getElementById("minus");
+
+            // Create global variable counter(laskuri), initial value is 0.
+
+            let laskuri = 0;            
+
+            // Create two functions: a plus counter and a minus counter.
+
+            function pluslaskuri() {
+            // Increase and decrease the counter value with button presses.
+            laskuri++;
+            // Print the counter value to the console.
+            console.log(laskuri);
+            // Print the counter value in the text element.
+            teksti.innerText = String(laskuri);
+//            teksti.innerText = laskuri.toString();
+//            teksti.innerText = laskuri;
+           }
+
+            function minuslaskuri(e) {
+            // Increase and decrease the counter value with button presses
+            laskuri--;
+            // Print the counter value to the console.
+            console.log(laskuri);
+            // Print the counter value in the text element.
+            teksti.innerText = String(laskuri);
+//            teksti.innerText = laskuri.toString();
+//            teksti.innerText = laskuri;
+                console.log(e.x);
+                console.log(e.y);
+                console.log(e);
+                console.log(e.target);
+            }
+
+            // Create two eventHandlers (for each button).
+            plus.addEventListener("click",pluslaskuri);
+            minus.addEventListener("click",minuslaskuri);
+/*
+            minus.addEventListener("click",(e) => {
+                console.log(e.x);
+                console.log(e.y);
+                console.log(e);
+                console.log(e.detail);
+            });
+*/
+            
+        </script>
+    </body>
+</html>

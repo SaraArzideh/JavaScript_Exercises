@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fi-FI">
+    <head>
+        <title>TITLE</title>
+        <meta charset="utf-8"/>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>Anonymous</h1>
+        <script>
+   
+    //Make a car factory that uses care names to create cars.
+    // the car has a name, color and engine(motor)
+    // there are three engines:
+    // engineA = power 100
+    // engineB = power 150 and turbo()
+    // engineC = power 200 and nitro()
+    // Create 4 cars and change the engine of one
+
+/*    
+    let Car1={
+        name: "Nissan",
+        color: "red",
+        motor: "100",
+    };
+    console.log((Car1.name),(Car1.color),(Car1.motor));
+
+    let Car2={
+        name: "Mazda",
+        color: "grey",
+        motor: 150,
+        turbo: function(){
+            console.log("turbo");
+        }
+    };
+    console.log((Car2.name),(Car2.color),(Car2.motor));
+
+    let Car3={
+        name: "Fiat",
+        color: "red",
+        motor: 200,
+        turbo: function(){
+            console.log("nitro");
+    };
+    console.log((Car3.name),(Car3.color),(Car3.motor));
+
+    let Car4={
+        name: "Ferari",
+        color: "black",
+        motor: 200,
+    };
+    console.log((Car4.name),(Car4.color),(Car4.motor));
+*/
+    let motor1={
+        power:100
+    }
+
+    let motor2={
+        power:150,
+        turbo(){console.log("Turbo!");}
+    }
+
+    let motor3={
+        power: 200,
+        turbo(){console.log("Nitro!");}
+    }
+    //1.Car factory structture
+    function CarFactory(name, color, motor = engineA){
+    this.name=name;
+    this.color= color;
+    this.motor= motor;
+    };
+    //2. make 4 cars
+    let Car1= new CarFactory("Car1","red");
+    let Car2= new CarFactory("Car2","grey", engineB);
+    let Car3= new CarFactory("Car3","white",engineC);
+    let Car4= new CarFactory("Car4","black");
+
+    carlist=[]
+    carlist.push(Car1,Car2,Car3,Car4);
+
+    //3.Change one car's motor
+    Car1.motor=motor;
+    console.log((Car1.name),(Car1.color),(Car1.motor));
+
+
+    console.log("--------")
+    //4.print all cars ,...
+    
+    for (let car of carlist){
+        console.log(car);
+        if("nitro" in car.motor){car.motor.nitro();}
+    }
+
+
+/*    function(){
+        myobject= structuredClonn(Car1, Car2, Car3,Car4);
+        console.log((myobject.name),(myobject.color),(myobject.motor));
+    }
+*/    
+
+
+        </script>
+    </body>
+</html>

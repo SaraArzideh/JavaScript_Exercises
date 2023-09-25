@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fi-FI">
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+      <script>
+
+
+    //Task 1: This program should print out the message "hi" and then ask 
+    //"Shall we continue?" until the user inputs "no". Then the 
+    //program should print out "okay then" and finish. 
+/*
+        let result= ""
+        
+        do {
+            console.log("Hi!");
+            result = prompt ("Shall we continue?") ;
+          
+        } while(result != "no");
+*/
+
+
+    // Task 2: This program should print out a countdown as follows:
+    //        Countdown!
+    //      5
+    //      4
+    //      3
+    //      2
+    //      1
+    //      Now! 
+
+/*
+        console.log("count down!");
+        for (let i=5 ; i>0 ; i--){
+                console.log (i);
+            }
+        console.log("now!");
+
+*/    
+
+    // Task 3:
+    //  Please write a program which asks the user for a password. The 
+    //  program should then ask the user to type in the password again. 
+    //  If the user types in something else than the first password, 
+    //  the program should keep on asking until the user types the first password again correctly. 
+
+
+        let pass1 = prompt ("Enter your password");
+        let pass2;
+        do {
+            pass2 = prompt("Please enter your password agin!");
+            if (pass1 != pass2){
+            alert("Wrong password, try it again!");
+            }
+            
+        } while(pass1 !== pass2 );
+        alert("Password accepted");
+
+    // Task 4:
+    // Please write a program which keeps asking the user for a PIN code 
+    // until they type the correct one, which is 4321.
+    // Then the program should print out the number of times the user tried different codes. 
+      
+    //First way:
+/*      let correctPin = 4321;
+        let inputPin;
+        let counter = 0;
+        do {
+            counter++;
+            inputPin = Number(prompt("Please enter the PIN code."));
+            if (inputPin != correctPin){
+            alert("Wrong PIN code, try it again!");
+            }
+           
+        } while(inputPin !== correctPin );
+        alert("After " + counter + " times you entered the correct PIN code!");
+*/        
+    // Second way:     
+/*          let counter = 0;
+            do {
+                counter++;
+            } while ( Number(prompt("Give me PIN code?")) !== 4321 );
+            console.log("You made " + counter + " guesses!");
+            
+
+            counter = 0;
+            do {
+                counter++;
+            } while ( prompt("Give me PIN code?").localeCompare(String(4321)) !== 0 );
+            console.log("You made " + counter + " times guesses!");
+*/
+    
+        </script>
+    </body>
+    
+</html>
+
+
+           
+        
+
+

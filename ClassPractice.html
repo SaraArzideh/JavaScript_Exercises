@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fi-FI">
+    <head>
+        <title>TITLE</title>
+        <meta charset="utf-8"/>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>Class and Object Practice</h1>
+        <script>
+            // class and object
+            // Aassignement
+            //make a persons class with these properties:
+            // firstname, lastname, age
+            // add a function greetings() that writes
+            // Hey! I am <firstname> <lastname> and my age is <age> years.
+            // Create your own family by using the class
+ /*           
+
+            class person {
+                    constructor(firstName,lastName,age) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this.age = age;
+                }
+                greetings() { 
+                    console.log(`Hi, I am ${this.firstName} ${this.lastName} and my age is ${this.ikä} !`); 
+                }
+
+            }
+            let Sara = new person("Sara","Arzideh",35);
+            let Hamed = new person("Hamed","Ahmadi",40);
+            Sara.greetings();
+            Hamed.greetings();
+         
+
+*/
+            //Assignement
+            //Make an array Jukola and fill it with 7 brothers.
+            // state how many elements are in the array.
+            // add eighth brother "Reijo".
+            // print all 
+
+            let jukola=["a","b","c","d","e","f","g"];
+            console.log(`There are ${jukola.length} brothers names in this object`);
+            jukola.push("Reijo");
+            for (let iter of jukola){
+                console.log(iter)
+            }
+
+            //Make a parent class House with properties
+            // width and length
+            // and the function area() which declares the area
+
+
+            class House {
+                constructor(width,length) {
+                    this.width = width;
+                    this.length = length;
+                }
+                area() {
+                    console.log(`House's area is ${this.width*this.length}`);
+                    return this.width*this.length;
+                }
+            }  
+            class Room extends House {
+                constructor(width,height,usement) {
+                    super(width,height);
+                    this.usement = usement;
+                }
+                informing() {
+                    console.log(`Roome's usemnet is ${usement} and It's size is ${this.area()}`);
+                }
+            }
+            let house = new House(10,20);
+            let restRoom = new Room(3,2,"rest room");
+            let bedRoom = new Room(5,4,"bed room");
+            let kitchen = new Room(6,4,"kitchen");
+            let dinningRoom = new Room(10,4,"dinning room");
+ 
+            let houseInforming = new Array(house,restRoom,dinningRoom,kitchen,bedRoom);
+            for (let elementti of houseInforming) {
+                elementti.area();
+            }
+
+            
+        </script>
+    </body>
+</html>
+

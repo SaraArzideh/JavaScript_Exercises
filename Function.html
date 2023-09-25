@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fi-FI">
+    <head>
+        <title>TITLE</title>
+        <meta charset="utf-8"/>
+        <style>
+        </style>
+    </head>
+    <body>
+        <script>
+ /*         // Assignment:
+            // Make a function that calculates the area of ​​a region
+            // and gets the result of area(4,3); // 12
+*/           
+            function area(length, width) {
+                console.log(length*width);
+            }
+            area(4,3);           
+
+            // Assignment:
+            // make a function that calculates for the given radius
+            // the area of ​​the circle.
+            function circlearea(radius) {
+                console.log(Math.PI*(radius**2));
+            }
+            circlearea(5); // 78
+            
+           
+            // there can be variables inside the function
+            // function can use global and local variables.
+            // the global variable is used as follows:     
+
+            function calculatesalary(grosssalary) {
+                // global variable can be used in function
+                console.log(grosssalary*globalsalarymultiplier);
+                // a global variable can be changed in a function
+                globalsalarymultiplier = 1.8;
+            }
+            // global variable is defined outside the function
+            let globalsalarymultiplier = 1.0;
+            calculateSalary(3000); // 3000
+
+            // globalsalarymultiplier = 1.8;
+            calculateSalary(3000); // 5400
+            console.log(globalsalarymultiplier);       
+
+            // local variable is used as follows
+            function calculatewages(grosssalary) {
+                // local variable is created inside the function
+                // it only exists inside the function
+                let multiplier = 1.8;
+                console.log(grosssalary*multiplier);
+            }
+            calculatewages(3000);
+            //console.log(multiplier); // ERROR multiplier does not exist
+    
+        </script>
+    </body>
+    
+</html>
+
+
+
+            

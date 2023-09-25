@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fi-FI">
+    <head>
+        <title>TITLE</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <script>
+        // Tehtävä
+
+        // Työntekijän palkka on 60e tunnilta.
+            // palkka on 1.5 kertainen lauantaina ja 2 kertainen sunnuntaina
+            // kysy käyttäjältä mikä päivä on kyseessä:
+            // MA, TI, KE, TO, PE, LA tai SU
+            // ja ilmoita palkka
+
+
+            let päivä = prompt("Mikä päivä on kysessä?").toLocaleUpperCase();
+            let päivänpalkka = 60;
+
+            switch(päivä) {
+                case "lauantaina":
+                    console.log(`lauantaina palkka on ${päivänpalkka*1.5} €.`);
+                    break;
+                case "sunnuntaina":
+                    console.log(`sunnuntaaina palkka on ${päivänpalkka*2} €.`);
+                    break;
+                default:
+                    console.log(`lauantaina palkka on ${päivänpalkka*1.5} €.`);
+                               
+            }
+            console.log("En ymmärä päivää!");
+
+            
+        </script>
+    </body>
+</html>

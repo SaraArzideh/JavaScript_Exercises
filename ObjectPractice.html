@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fi-FI">
+    <head>
+        <title>TITLE</title>
+        <meta charset="utf-8"/>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>Object Practice</h1>
+        <script>
+            //create an object with two properties: firstname and lastname
+            //add a method fullname to the object that prints "first name last name"
+           
+            let myObjectA= { 
+                firstName: "Firstiii", 
+                lastName: "Lastiii", 
+                fullName(){
+                    console.log(`${this.firstName} ${this.lastName}`);
+                }
+            };
+            myObjectA.fullName();
+
+            
+
+            //Try the entity in two ways.
+            //First make the full name as an anonymous function and then with an arrow function
+           
+            //Anonymous method;
+            const firstName="Firstiii";
+            const lastName= "Lastiii";
+            (function(){
+                console.log(firstName, lastName)
+            })(firstName, lastName);
+            
+            
+        
+            //Arrow method;
+            const fullName=(firstName, lastName) => (console.log(firstName, lastName));
+            fullName("Firstiii","Lastiii")
+
+/*           
+            //Third, use the fullname() { *code* } method
+
+            let fullName= (firstName, lastName) => console.log(`${this.firstName} ${this.lastName}"`);
+            console.log(`${this.firstName} ${this.lastName}"`);
+*/
+
+/*
+            let fullName= (firstName, lastName) =>(this.etunimi + " " + this.sukunimi);
+            console.log(fullName(Firstiii, Lastiii));
+
+            function Henkilö(etunimi, sukunimi) {
+                this.etunimi = etunimi;
+                this.sukunimi = sukunimi;
+                this.kokonimi = function() {
+                    console.log(this.etunimi + " " + this.sukunimi);
+                }
+            }
+*/
+        </script>
+    </body>
+</html>
+

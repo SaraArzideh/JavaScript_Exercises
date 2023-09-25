@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fi-FI">
+    <head>
+        <title>TITLE</title>
+        <meta charset="utf-8"/>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>Anonyymi</h1>
+        <script>
+            // Jokaiselle muuttujalle voidaan antaa arvoksi funktio.
+            // Funktio voi olla nimeä käyttävä tai anonyymi.
+            // anonyymi funktio voi olla: 
+            // anonyymi funktio tai nuolifunktio.
+
+            // luodaan muuttuja A, joka käyttää anonyymia funktiota.
+            // kyseinen funktio ottaa kaksi argumenttia: arg1, arg2
+            // funktiossa argumentit lasketaan yhteen.
+            // kutsu muuttujaa ja tulosta lasku.
+
+            let muuttujaA = function (arg1, arg2) {
+                console.log(arg1+arg2);
+            }
+            // kutsun muuttujaa, jolloin se käyttää sille arvoksi 
+            // annettua anonyymiä funktiota.
+            muuttujaA(111,222); // 333
+
+            // sama asia voidaan toteuttaa nuolifunktiolla.
+            // lambda funktio on tästä käytetty nimitys.
+
+            let muuttujaB = (arg1, arg2) => {
+                console.log(arg1+arg2);
+            }
+            muuttujaB(111,222); // 333
+
+            // anonyymillä funktiolla ei tarvitse olla argumentteja.
+            // seuraavat funktio käyttää ulkopuolista muuttujaa outA.
+            // mutta se ei käytä argumentteja.
+
+            let outA = 123;
+
+            let muuttujaC = function() {
+                console.log(outA); // 123
+            }
+            muuttujaC();
+
+            let muuttujaD = () => {
+                console.log(outA); // 123
+            }
+            muuttujaD();
+
+            // Nuolifunktioilla on vielä pari erikoistapausta
+            // 1) jos funktiossa on vain yksi käsky, voidaan
+            // { } merkit jättää pois
+            let muuttujaE = () => console.log(outA); // 123
+            muuttujaE();
+            // 2) jos funktio palauttaa jotain, se ei tarvitse
+            // return sanaa, jos käskyjä on yksi.
+            let muuttujaF = (x) => x**2;
+            console.log(muuttujaF(10)); // 100
+            // 3) jos funktiolla on yksi argumentti, ei tarvita ()
+            // merkkejä
+            let muuttujaG = x => x**2;
+            console.log(muuttujaG(10)); // 100
+            // 4) jos funktio palauttaa jotain
+            let muuttujaH = x => { x = x**2; return x += 10; }
+            console.log(muuttujaH(10)); // 110
+            
+            let muuttujaI = (x,y) => x**y;
+            console.log(muuttujaI(10,2)); // 100
+
+            // callback funktio perustuu ideaan, että muuttuja
+            // voi saada arvoksi funktion.
+            // Tässä luodaan funktio valinta, jolla on 3 argumenttia.
+            // choice määrää näytetäänkö funktio 1 vai 2.
+            function valinta (func1, func2, choice) {
+                // true = func1, false = func2
+                (choice) ? func1() : func2();
+            }
+            function OIKEA() { console.log("OIKEIN"); }
+            function VÄÄRÄ() { console.log("VÄÄRIN"); }
+
+            valinta(OIKEA, VÄÄRÄ, true);
+            valinta(OIKEA, VÄÄRÄ, false);
+
+
+            function Henkilö(etunimi, sukunimi) {
+                this.etunimi = etunimi;
+                this.sukunimi = sukunimi;
+                this.kokonimi = function() {
+                    console.log(this.etunimi + " " + this.sukunimi);
+                }
+            }
+
+        </script>
+    </body>
+</html> 
